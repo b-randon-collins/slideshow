@@ -66,18 +66,29 @@ const ModelRelationshipsSlide = () => (
                     </table>
                 </div>
 
-                <div className="model FriendshipTable" id="FriendshipTable">
-                    <h3>Friendship</h3>
+                <div className="model LikeTable" id="LikeTable">
+                    <h3>Like</h3>
                     <table className="model-attributes">
                         <thead>
                             <tr>
-                                <th>Attribute</th><th>Type</th><th>Details</th>
+                                <th>Attribute</th>
+                                <th>Type</th>
+                                <th>Details</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>user_id_1</td><td>Integer</td><td>Foreign Key (User)</td></tr>
-                            <tr><td>user_id_2</td><td>Integer</td><td>Foreign Key (User)</td></tr>
-                            <tr><td>status</td><td>String</td><td>Status of friendship</td></tr>
+                            <tr id="LikeTable_id">
+                                <td>id</td><td>Integer</td><td>Primary Key</td>
+                            </tr>
+                            <tr>
+                                <td>user_id</td><td>Integer</td><td>Foreign Key (User)</td>
+                            </tr>
+                            <tr>
+                                <td>post_id</td><td>Integer</td><td>Foreign Key (Post)</td>
+                            </tr>
+                            <tr>
+                                <td>created_at</td><td>DateTime</td><td>Timestamp</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

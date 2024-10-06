@@ -1,0 +1,39 @@
+.tech-integration > * {
+    background: white;
+    height: 70px;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+.tech-integration {
+    text-align: right;
+    float: right;
+
+}
+
+div.content-container > .content-container > h2 {
+    float: left;
+}
+
+.content-container > img {
+    margin-right: 30px;
+    border-radius: 13px;
+    float: left;
+}
+.active {
+    font-weight: bold;
+    color: blue;
+}
+
+.expanded {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}

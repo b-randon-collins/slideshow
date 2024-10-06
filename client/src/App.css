@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+
+div#left-column-slides > ul {
+  padding: 0px;
+  list-style-type: none;
+}

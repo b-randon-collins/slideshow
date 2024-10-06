@@ -1,0 +1,90 @@
+.tech-section > h3 {
+    text-align: center;
+}
+#sqlite-slide .model-attributes th {
+    color: black;
+}
+div#sqlite-slide > .models-container {
+    display: flex;
+}
+
+#sqlite-slide .slide-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+#sqlite-slide .text-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+#sqlite-slide .tech-cards-container {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    max-width: 50%;
+}
+
+#sqlite-slide .tech-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+#sqlite-slide .tech-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#sqlite-slide .models-container {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#sqlite-slide .models-container td {
+    padding: 15px;
+}
+
+#sqlite-slide .model-attributes {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#sqlite-slide .model-attributes th, .model-attributes td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#sqlite-slide .relationship-canvas {
+    display: none;
+    margin-top: 20px;
+    height: 300px;
+    border: 1px solid #ddd;
+}
+#sqlite-slide tech-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#sqlite-slide .tech-card-text {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+#sqlite-slide .tech-card-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.content-container > img {
+    border-radius: 13px;
+}

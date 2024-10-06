@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 const Slide = ({ slideIndex }) => {
     const [content, setContent] = useState('');
 
