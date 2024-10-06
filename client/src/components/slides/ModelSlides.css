@@ -1,0 +1,44 @@
+.slide-container {
+    display: flex;
+    flex-direction: column;
+
+}
+.model {
+    width: auto;
+    display: inline-block;
+}
+.top-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.table-section {
+    flex: 1;
+}
+
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.model-attributes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.model-attributes th, .model-attributes td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.model-attributes th {
+    background-color: #f2f2f2;
+}

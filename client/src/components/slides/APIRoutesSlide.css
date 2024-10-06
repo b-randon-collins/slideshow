@@ -1,0 +1,70 @@
+div#right-column-slides .slide  table td {
+    border: 1px solid white;
+    padding: 15px;
+}
+
+.api-routes-slide table {
+    border-collapse: collapse;
+    border: 1px solid white;
+}
+.api-routes-slide .slide {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.api-routes-slide table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid white;
+}
+
+.api-routes-slide table thead th {
+    background-color: #333;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+.api-routes-slide table tbody td {
+    border: 1px solid white;
+    padding: 15px;
+}
+
+.api-routes-slide {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.api-card {
+    padding: 20px;
+    width: 600px;
+    max-width: 100%;
+}
+
+.api-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.api-card h3 {
+    text-align: center;
+    margin: unset;
+}
+
+.api-card td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.api-card tr:last-child td {
+    border-bottom: none;
+}
+
+.api-card th {
+    padding: 12px;
+    font-size: 1.1em;
+}

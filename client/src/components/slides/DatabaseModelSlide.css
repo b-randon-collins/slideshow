@@ -1,0 +1,91 @@
+.models-container {
+    border-collapse: collapse;
+    justify-items: center;
+    display:grid;
+}
+
+.model-attributes {
+    width: 100%;
+}
+
+.model h3 {
+    text-align: center;
+    color: dodgerblue;
+}
+
+.UserTable {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+}
+
+.PostTable,
+.LikesTable,
+.CommentTable {
+    grid-row: 2;
+}
+
+table.model-attributes > thead {
+    background: white;
+    color: black;
+}
+
+table.model-attributes td, table.model-attributes th {
+    border: 1px solid white;
+    padding: 10px 20px;
+}
+
+table.model-attributes {
+    border-collapse: collapse;
+}
+
+table.model-attributes td {
+}
+
+.slideshow-display {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+#left-column-slides {
+    min-width: 200px;
+    max-width: 20%;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+}
+
+
+
+button {
+    margin: 10px 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#left-column-slides li {
+    padding: 20px;
+    cursor: 'pointer';
+
+}
+
+#left-column-slides li:hover {
+    background: #1B1B1B;
+}
+
+#left-column-slides li.active {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+
+table.models-container > td {}
+
+table.models-container > tr > td {
+    padding: 10px;
+    vertical-align: top;
+}
