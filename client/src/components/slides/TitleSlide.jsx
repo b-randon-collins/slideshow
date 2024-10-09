@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 
 const TitleSlide = () => {
-    const title = "Social Network"; // Title constant
+    const title = "Welcome"; // Title constant
 
 
 

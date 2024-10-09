@@ -1,8 +1,22 @@
 // src/components/slides/CommentModelSlide.jsx
 import React from 'react';
 import './ModelSlides.css';
+import CodeBlockComponent from '../uiUtilities.jsx/codeBlock/CodeBlock';
 
-const CommentModelSlide = () => (
+const CommentModelSlide = () => {
+    const modelExample =`class Comment(db.Model):
+    __tablename__ = 'comments'
+
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.Text, nullable=False)
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    user = db.relationship('User', backref='comments', lazy=True)
+`;
+
+    return (
     <div id="comment-model-slide">
         <div className="top-row">
             <div className="text-section">
@@ -58,7 +72,9 @@ const CommentModelSlide = () => (
                 </div>
             </div>
         </div>
-    </div>
-);
+        <CodeBlockComponent code={modelExample} />
 
+    </div>
+    );
+};
 export default CommentModelSlide;

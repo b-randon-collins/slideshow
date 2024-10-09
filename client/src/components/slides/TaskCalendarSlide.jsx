@@ -1,8 +1,6 @@
 import React from 'react';
-import './TaskCalendarSlide.css'; // Import your styles here
-
+import './TaskCalendarSlide.css';
 const TaskCalendarSlide = () => {
-    // Define the task calendar data with estimated time
     const calendarData = [
         { date: '10/7/2024', tasks: [{ description: 'Set up project, design data models.', estimatedTime: '2 hours' }] },
         { date: '10/8/2024', tasks: [{ description: 'Develop User <span class="highlight">Authentication</span> (<span className="highlight">backend</span> and <span className="highlight">frontend</span>).', estimatedTime: '4 hours' }] },
@@ -23,11 +21,10 @@ const TaskCalendarSlide = () => {
         { date: '10/23/2024', tasks: [{ description: 'Code freeze: ensure everything is working and presentable.', estimatedTime: '1 hour' }] },
         { date: '10/24/2024', tasks: [{ description: 'Science Fair presentation preparation.', estimatedTime: '3 hours' }] },
         { date: '10/25/2024', tasks: [{ description: 'Graduation preparations.', estimatedTime: '2 hours' }] },
-        { date: '10/26/2024', tasks: [{ description: 'No tasks', estimatedTime: '' }] }, // Extend the calendar for consistency
-        { date: '10/27/2024', tasks: [{ description: 'No tasks', estimatedTime: '' }] }, // Extend the calendar for consistency
+        { date: '10/26/2024', tasks: [{ description: 'No tasks', estimatedTime: '' }] },
+        { date: '10/27/2024', tasks: [{ description: 'No tasks', estimatedTime: '' }] },
     ];
-
-    // Get the starting day of the week for the calendar (10/7/2024 is a Monday)
+    
     const startDate = new Date('10/7/2024');
 
     return (
@@ -49,9 +46,8 @@ const TaskCalendarSlide = () => {
                     <tr>
                         {Array.from({ length: 7 }, (_, i) => {
                             const currentDate = new Date(startDate);
-                            currentDate.setDate(startDate.getDate() + i); // Increment the start date by the current index
+                            currentDate.setDate(startDate.getDate() + i);
 
-                            // Find tasks for each day
                             const tasksForDay = calendarData.find(task => task.date === `${currentDate.getMonth() + 1}/${currentDate.getDate()}/2024`)?.tasks || [];
 
                             return (
@@ -73,14 +69,13 @@ const TaskCalendarSlide = () => {
                             );
                         })}
                     </tr>
-                    {/* Continue filling in the rest of the weeks */}
+
                     {Array.from({ length: 3 }, (_, weekIndex) => (
                         <tr key={weekIndex}>
                             {Array.from({ length: 7 }, (_, dayIndex) => {
                                 const currentDate = new Date(startDate);
                                 currentDate.setDate(startDate.getDate() + (weekIndex * 7) + dayIndex); // Calculate the current date
 
-                                // Find tasks for each day
                                 const tasksForDay = calendarData.find(task => task.date === `${currentDate.getMonth() + 1}/${currentDate.getDate()}/2024`)?.tasks || [];
 
                                 return (
@@ -91,7 +86,16 @@ const TaskCalendarSlide = () => {
                                                 tasksForDay.map((task, index) => (
                                                     <div key={index} className="task">
                                                         <span dangerouslySetInnerHTML={{ __html: task.description }} />
+                                                       <div className='calendar-task-tech-icons'>
+                                                            <img src="/assets/python.png" alt="Python Logo" />
+                                                            <img src="/assets/sqlalchemy.png" alt="SQLAlchemy Logo" />
+                                                            <img src="/assets/sqlite.png" alt="SQLite Logo" />
+                                                            <img src="/assets/react.png" alt="React Logo" />
+
+                                                        </div>
+                                                        
                                                         {task.estimatedTime && <span className="estimated-time">{task.estimatedTime}</span>}
+
                                                     </div>
                                                 ))
                                             ) : (

@@ -1,7 +1,19 @@
 // src/components/slides/LikeModelSlide.jsx
 import React from 'react';
 import './ModelSlides.css';
-const LikeModelSlide = () => (
+import CodeBlockComponent from '../uiUtilities.jsx/codeBlock/CodeBlock';
+const LikeModelSlide = () => {
+    const modelExample = `class Like(db.Model):
+    __tablename__ = 'likes'
+
+    id = db.Column(db.Integer, primary_key=True)
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    user = db.relationship('User', backref='likes', lazy=True)
+    post = db.relationship('Post', backref='likes', lazy=True)
+`;
+    return (
     <div id="like-model-slide">
         <div className="top-row">
             <div className="text-section">
@@ -53,66 +65,11 @@ const LikeModelSlide = () => (
             </div>
         </div>
 
-        <div className="bottom-row">
-            <div className="model UserTable" id="UserTable">
-                <h3>User</h3>
-                <table className="model-attributes">
-                    <thead>
-                        <tr>
-                            <th>Attribute</th>
-                            <th>Type</th>
-                            <th>Details</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="UserTable_id">
-                            <td>id</td><td>Integer</td><td>Primary Key</td>
-                        </tr>
-                        <tr>
-                            <td>username</td><td>String</td><td>Unique</td>
-                        </tr>
-                        <tr>
-                            <td>email</td><td>String</td><td>Unique</td>
-                        </tr>
-                        <tr>
-                            <td>password</td><td>String</td><td>Hashed</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>Relationships: One-to-Many (Posts), Many-to-Many (Likes)</p>
-            </div>
 
-            <div className="model PostTable" id="PostTable">
-                <h3>Post</h3>
-                <table className="model-attributes">
-                    <thead>
-                        <tr>
-                            <th>Attribute</th>
-                            <th>Type</th>
-                            <th>Details</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="PostTable_id">
-                            <td>id</td><td>Integer</td><td>Primary Key</td>
-                        </tr>
-                        <tr>
-                            <td>content</td><td>Text</td><td></td>
-                        </tr>
-                        <tr>
-                            <td>created_at</td><td>DateTime</td><td></td>
-                        </tr>
-                        <tr id="PostTable_user_id">
-                            <td>user_id</td><td>Integer</td><td>Foreign Key (User)</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>Relationships: One-to-Many (Comments), Many-to-One (User)</p>
-            </div>
-        </div>
 
         <p>The Like model serves as a join table, connecting users and posts with many-to-one relationships on both sides. Each user can like multiple posts, and each post can be liked by many users.</p>
+        <CodeBlockComponent code={modelExample} />
     </div>
 );
-
+}
 export default LikeModelSlide;

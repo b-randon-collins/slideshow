@@ -3,6 +3,18 @@ import './APIRoutesSlide.css';
 
 const APIRoutesSlide = () => (
     <div className='slide api-routes-slide'>
+            <p>
+      Our API follows RESTful conventions and is organized using Flask Blueprints for modularity. 
+      Each blueprint represents a set of routes for specific models like users, posts, comments, etc.
+    </p>
+    <p>These routes map HTTP methods (GET, POST, PUT, DELETE) to SQLAlchemy queries to interact with the database.</p>
+
+    <h3>Key Components:</h3>
+    <ul>
+      <li><strong>Blueprints:</strong> Organize routes by feature (e.g., `/users`, `/posts`).</li>
+      <li><strong>SQLAlchemy:</strong> ORM used to interact with the database, executing queries behind the scenes.</li>
+    </ul>
+
         <div className="api-card">
             <table>
                 <thead>

@@ -4,9 +4,7 @@ import React from 'react';
 const ModelRelationshipsSlide = () => (
     <div>
         <h2>Model Relationships</h2>
-        <p>In the social network project, the models are connected through various relationships that define how data is linked across the platform.</p>
         
-        <h3>Key Relationships:</h3>
         <ul>
             <li><strong>User ↔ Post (One-to-Many):</strong> A user can create many posts, but each post belongs to only one user.</li>
             <li><strong>Post ↔ Comment (One-to-Many):</strong> Each post can have multiple comments, but each comment belongs to one post.</li>

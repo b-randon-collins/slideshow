@@ -22,11 +22,11 @@ div.content-container > .content-container > h2 {
 }
 .active {
     font-weight: bold;
-    color: blue;
+    color: dodgerblue;
 }
 
 .expanded {
-    font-weight: bold;
+ 
 }
 
 ul {
@@ -36,4 +36,15 @@ ul {
 
 li {
     margin: 5px 0;
+}
+
+div#left-column-slides > ul > li {
+    padding-left: 40px !important;
+}
+
+div#left-column-slides > ul > li span {
+    position: absolute;
+    margin-left: -30px;
+    font-size: 30px;
+    margin-top: -6px;
 }

@@ -34,45 +34,45 @@ const DatabaseModelSlide = () => {
             }
         };
 
-        // createConnection(
-        //     'PostTable_user_id',
-        //     'UserTable_id',
-        //     ["Right", "Left"],
-        //     { stub: [20, 40], gap: 10 },
-        //     [-10, 10]
-        // );
+        createConnection(
+            'PostTable_user_id',
+            'UserTable_id',
+            ["Right", "Left"],
+            { stub: [20, 40], gap: 10 },
+            [-10, 10]
+        );
 
-        // createConnection(
-        //     'CommentTable_post_id',
-        //     'PostTable_id',
-        //     ["Right", "Left"],
-        //     { stub: [20, 20], gap: 10 },
-        //     [10, -10]
-        // );
+        createConnection(
+            'CommentTable_post_id',
+            'PostTable_id',
+            ["Right", "Left"],
+            { stub: [20, 20], gap: 10 },
+            [10, -10]
+        );
 
-        // createConnection(
-        //     'CommentTable_user_id',
-        //     'UserTable_id',
-        //     ["Right", "Left"],
-        //     { stub: [30, 30], gap: 10 },
-        //     [10, 0]
-        // );
+        createConnection(
+            'CommentTable_user_id',
+            'UserTable_id',
+            ["Right", "Left"],
+            { stub: [30, 30], gap: 10 },
+            [10, 0]
+        );
 
-        // createConnection(
-        //     'LikesTable_user_id',
-        //     'UserTable_id',
-        //     ["Right", "Left"],
-        //     { stub: [30, 20], gap: 10 },
-        //     [10, -10]
-        // );
+        createConnection(
+            'LikesTable_user_id',
+            'UserTable_id',
+            ["Right", "Left"],
+            { stub: [30, 20], gap: 10 },
+            [10, -10]
+        );
 
-        // createConnection(
-        //     'LikesTable_post_id',
-        //     'PostTable_id',
-        //     ["Right", "Left"],
-        //     { stub: [20, 20], gap: 10 },
-        //     [10, -10]
-        // );
+        createConnection(
+            'LikesTable_post_id',
+            'PostTable_id',
+            ["Right", "Left"],
+            { stub: [20, 20], gap: 10 },
+            [10, -10]
+        );
 
         instance.repaintEverything();
     }, []);
@@ -80,9 +80,7 @@ const DatabaseModelSlide = () => {
     return (
         <div className="database-model-slide ">
             <h2>Database Models</h2>
-            <table className="models-container">
-                <tr>
-                    <td colSpan={3}>
+            <div className="models-container">
                         <div className="model UserTable" id="UserTable">
                             <h3>User</h3>
                             <table className="model-attributes">
@@ -111,11 +109,6 @@ const DatabaseModelSlide = () => {
                             </table>
                             <p>Relationships: One-to-Many (Posts), Many-to-Many (Likes)</p>
                         </div>
-                    </td>
-                </tr>
-               
-                <tr>
-                    <td>
                         <div className="model PostTable" id="PostTable">
                             <h3>Post</h3>
                             <table className="model-attributes">
@@ -143,8 +136,6 @@ const DatabaseModelSlide = () => {
                             </table>
                             <p>Relationships: One-to-Many (Comments), Many-to-One (User)</p>
                         </div>
-                    </td>
-                    <td>
                         <div className="model LikesTable" id="LikesTable">
                         <h3>Likes</h3>
                         <table className="model-attributes">
@@ -169,8 +160,6 @@ const DatabaseModelSlide = () => {
                         </table>
                         <p>Relationships: Many-to-Many (Users and Posts)</p>
                         </div>
-                    </td>
-                    <td>
                         <div className="model CommentTable" id="CommentTable">
                             <h3>Comment</h3>
                             <table className="model-attributes">
@@ -201,9 +190,8 @@ const DatabaseModelSlide = () => {
                             </table>
                             <p>Relationships: Many-to-One (Post, User)</p>
                         </div>
-                    </td>
-                </tr>
-            </table>
+                
+            </div>
             <div className="relationship-canvas" id="relationshipCanvas"></div>
         </div>
     );

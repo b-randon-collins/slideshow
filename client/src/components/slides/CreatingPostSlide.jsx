@@ -1,50 +1,67 @@
-// src/components/slides/CreatingPostSlide.jsx
 import React from 'react';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import CodeBlockComponent from '../uiUtilities.jsx/codeBlock/CodeBlock';
 
-const CreatingPostSlide = () => (
-    <div>
-        <h2>Creating a Post</h2>
-        <p>After login, the user can create a new post by visiting the "Create Post" page and filling out a form.</p>
-        
-        <h3>Frontend Route:</h3>
-        <ul>
-            <li><strong>Route:</strong> /create-post</li>
-            <li><strong>Component:</strong> CreatePostPage.js</li>
-        </ul>
+const validationSchema = Yup.object({
+  title: Yup.string().required('Title is required'),
+  content: Yup.string().required('Content is required')
+});
 
-        <h3>API Route:</h3>
-        <ul>
-            <li><strong>POST /api/posts</strong> - Creates a new post.</li>
-        </ul>
+const handlePostCreation = (values) => {
+  console.log('Post creation attempted with values:', values);
+};
 
-        <h3>Tables Involved:</h3>
-        <div className="model PostTable" id="PostTable">
-            <h3>Post</h3>
-            <table className="model-attributes">
-                <thead>
-                    <tr>
-                        <th>Attribute</th>
-                        <th>Type</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>id</td><td>Integer</td><td>Primary Key</td>
-                    </tr>
-                    <tr>
-                        <td>content</td><td>Text</td><td>Post content</td>
-                    </tr>
-                    <tr>
-                        <td>created_at</td><td>DateTime</td><td>Timestamp for creation</td>
-                    </tr>
-                    <tr>
-                        <td>user_id</td><td>Integer</td><td>Foreign key to User</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+const CreatingPostFormSlide = () => (
+  <div>
+    <div className="content-container">
+      <div className="tech-integration">
+        <img src="/assets/formik.png" alt="Formik Logo" />
+        <img src="/assets/yup.png" alt="Yup Logo" />
+      </div>
+
+      <h2>Create a New Post</h2>
+      {/* <p>The post creation form also leverages <strong>Formik</strong> and <strong>Yup</strong> for state management and validation.</p> */}
+
+      <p>Users create a post by filling in the following form:</p>
+      <Formik
+        initialValues={{ postContent: '' }}
+        validationSchema={Yup.object({
+          postContent: Yup.string().required('Post content is required')
+        })}
+        onSubmit={(values, { setSubmitting }) => {
+          console.log(values);
+          setSubmitting(false);
+        }}
+      >
+        {({ isSubmitting }) => (
+          <Form className='form'>
+            <label htmlFor="postContent" style={{ fontWeight: 'bold' }}>Post Content</label>
+            <Field name="postContent" as="textarea" placeholder="Write something..." />
+            <ErrorMessage name="postContent" component="div" style={{ color: 'red', fontSize: '12px' }} />
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#007BFF',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '4px',
+                fontSize: '16px',
+                cursor: 'pointer',
+                marginTop: '10px'
+              }}
+            >
+              {isSubmitting ? 'Posting...' : 'Create Post'}
+            </button>
+          </Form>
+        )}
+      </Formik>
+
     </div>
+  </div>
 );
 
-export default CreatingPostSlide;
+export default CreatingPostFormSlide;

@@ -1,8 +1,20 @@
 // src/components/slides/PostModelSlide.jsx
 import React from 'react';
 import './ModelSlides.css';
+import CodeBlockComponent from '../uiUtilities.jsx/codeBlock/CodeBlock';
 
-const PostModelSlide = () => (
+const PostModelSlide = () => {
+const modelExample =`class Post(db.Model):
+    __tablename__ = 'posts'
+
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.Text, nullable=False)
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    comments = db.relationship('Comment', backref='post', lazy=True)
+`;
+    return (
     <div id="post-model-slide">
         <div className="top-row">
             <div className="text-section">
@@ -54,7 +66,8 @@ const PostModelSlide = () => (
                 </div>
             </div>
         </div>
+        <CodeBlockComponent code={modelExample} />
     </div>
-);
-
+    );
+};
 export default PostModelSlide;
